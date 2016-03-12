@@ -2875,3 +2875,59 @@ Started GET "/assets/application.self-cb23a9ef9136a73c9ab4d61dffbf8255969b939b12
 
 
 Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-12 12:45:24 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-12 15:22:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"  ORDER BY created_at DESC
+  Rendered articles/index.html.erb within layouts/application (15.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 356ms (Views: 340.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles?category=Art" for 127.0.0.1 at 2016-03-12 15:22:33 -0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Art"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT 1  [["name", "Art"]]
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = ?  ORDER BY created_at DESC[0m  [["category_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.0ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 124ms (Views: 104.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles?category=Technology" for 127.0.0.1 at 2016-03-12 15:22:34 -0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Technology"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT 1[0m  [["name", "Technology"]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."category_id" = ?  ORDER BY created_at DESC  [["category_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles?category=Politics" for 127.0.0.1 at 2016-03-12 15:22:35 -0300
+Processing by ArticlesController#index as HTML
+  Parameters: {"category"=>"Politics"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT 1  [["name", "Politics"]]
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."category_id" = ?  ORDER BY created_at DESC[0m  [["category_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-12 15:22:37 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"  ORDER BY created_at DESC[0m
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 91ms (Views: 89.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-12 15:22:39 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"  ORDER BY created_at DESC[0m
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 102ms (Views: 100.2ms | ActiveRecord: 0.5ms)
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
